@@ -2,7 +2,7 @@
 			var colorRedElement = document.getElementById("red");
 			var colorGreenElement = document.getElementById("green");
 			var colorBlueElement = document.getElementById("blue");
-			 
+
 			//variabler for verdien til range bar elementer
 			var colorRed;
 			var colorGreen;
@@ -14,25 +14,25 @@
 				colorRedElement = document.getElementById("red");
 				colorGreenElement = document.getElementById("green");
 				colorBlueElement = document.getElementById("blue");
-			 
-			 
-			 
-			 
+			    
+
+
+
 			    document.getElementById("boks").onmousedown = settFarge;
 				document.getElementById("boks2").onmousedown = giFarge;
 				document.getElementById("boks3").onmousedown = giFarge;
 				document.getElementById("boks4").onmousedown = giFarge;
 				document.getElementById("boks5").onmousedown = giFarge;
 				document.getElementById("boks6").onmousedown = giFarge;
-			 
+
 				colorRedElement.onmousemove = oppdaterfarge;
 				colorGreenElement.onmousemove = oppdaterfarge;
 				colorBlueElement.onmousemove = oppdaterfarge;
-			 
+
 				colorRedElement.max = 255;
 				colorGreenElement.max = 255;
 				colorBlueElement.max = 255;
-			 
+
 				colorRedElement.min = 0;
 				colorGreenElement.min = 0;
 				colorBlueElement.min = 0;
@@ -52,7 +52,7 @@
 				fargeFraFargevelger = "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")"
 				document.getElementById("boks").style.backgroundColor = fargeFraFargevelger;
 			}
-			 
+
 			function settFarge() {
 				skalSetteFarge = true
 				console.log("true")
@@ -65,4 +65,3 @@
 				skalSetteFarge = false;
 				}
 			}
-			
