@@ -26,27 +26,27 @@ function oppstart(){
 	colorGreenElement.onmousemove = oppdaterfarge;
 	colorBlueElement.onmousemove = oppdaterfarge;
 
+    // hentet fra
     function getSelectedText() {
         var text = "";
         if (typeof window.getSelection !== "undefined") {
             text = window.getSelection().toString();
-        } else if (typeof document.selection !== "undefined" && document.selection.type == "Text") {
+        }
+        else if (typeof document.selection !== "undefined" && document.selection.type == "Text") {
             text = document.selection.createRange().text;
         }
         return text;
     }
+    //slutt hentet fra
 
     function doSomethingWithSelectedText() {
         var selectedText = getSelectedText();
+        var randomID = makeid()
         if (selectedText) {
-            var ordlengde = selectedText.length
-            console.log(selectedText)
-            var indexStart = (tekstfeltElement.innerText .search(selectedText))
-            console.log(indexStart)
-            var indexSlutt = indexStart + ordlengde
-            var change = tekstfeltElement.innerHTML.replace(selectedText,"<span id="makeid()">" + selectedText + "</span>")
+            
+            var change = tekstfeltElement.innerHTML.replace(selectedText,"<span id=" + randomID + ">" + selectedText + "</span>")
             tekstfeltElement.innerHTML = change;
-            document.getElementById("test").style.fontFamily = "Impact,Charcoal,sans-serif";
+            document.getElementById(randomID).style.fontFamily = "Impact,Charcoal,sans-serif";
         }
     }
 
