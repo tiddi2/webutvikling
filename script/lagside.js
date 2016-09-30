@@ -14,7 +14,7 @@
 				colorRedElement = document.getElementById("red");
 				colorGreenElement = document.getElementById("green");
 				colorBlueElement = document.getElementById("blue");
-			    
+
 
 
 

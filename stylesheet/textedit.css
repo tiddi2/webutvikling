@@ -1,0 +1,30 @@
+main {
+    min-height:300px;
+    width: 500px;
+    border: 1px solid #000000;
+    margin: auto;
+}
+#teksther {
+    min-height: 300px;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: transparent;
+    border-style: none;
+}
+#teksther:focus {
+    outline:0;
+}
+.boks {
+	width:50px;
+	height:50px;
+	border:1px solid;
+}
+
+aside {
+    width: 200px;
+    height: 400px;
+    float: left;
+    border: 1px solid #000000;
+}
