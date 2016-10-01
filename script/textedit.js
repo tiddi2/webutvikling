@@ -9,8 +9,9 @@ var colorGreen;
 var colorBlue;
 var fargeFraFargevelger;
 var skalSetteFarge = false;
-var fontHolder;
+var fontHolder = "Times New Roman, Times, serif";
 var tekstfeltElement;
+var tekstSomSkalEndres;
 window.onload = oppstart;
 function oppstart(){
 	colorRedElement = document.getElementById("red");
@@ -19,14 +20,18 @@ function oppstart(){
     tekstfeltElement = document.getElementById("teksther")
 
     document.getElementById("fontVelger").onchange = velgFont
+	document.getElementById("fontSize").onchange = velgFontStorrelse;
     document.getElementById("boks").onmousedown = settFarge;
 	document.getElementById("giFarge").onmousedown = giFarge;
 
+	document.getElementById("BreddeObjekt").onmousemove = oppdaterWebsideBredde;
+	document.getElementById("tittelFelt").onclick = tekstfeltSomSkalEndres
+	document.getElementById("teksther").onclick = tekstfeltSomSkalEndres
 	colorRedElement.onmousemove = oppdaterfarge;
 	colorGreenElement.onmousemove = oppdaterfarge;
 	colorBlueElement.onmousemove = oppdaterfarge;
-
-    // hentet fra
+/*
+    // hentet fra http://stackoverflow.com/questions/5379120/get-the-highlighted-selected-text
     function getSelectedText() {
         var text = "";
         if (typeof window.getSelection !== "undefined") {
@@ -37,21 +42,26 @@ function oppstart(){
         }
         return text;
     }
-    //slutt hentet fra
+    //slutt hentet fra http://stackoverflow.com/questions/5379120/get-the-highlighted-selected-text
 
     function doSomethingWithSelectedText() {
+		console.log(selectedText.fontsize(100))
         var selectedText = getSelectedText();
-        var randomID = makeid()
+        randomID = makeid()
         if (selectedText) {
-            
-            var change = tekstfeltElement.innerHTML.replace(selectedText,"<span id=" + randomID + ">" + selectedText + "</span>")
-            tekstfeltElement.innerHTML = change;
-            document.getElementById(randomID).style.fontFamily = "Impact,Charcoal,sans-serif";
-        }
+			tekstfeltElement.innerHTML.match(/<span id=/g)
+			oneStepBack = tekstfeltElement.innerHTML;
+			change = tekstfeltElement.innerHTML.replace(selectedText,"<span id=" + randomID + ">" + selectedText + "</span>")
+		}
     }
 
     document.onmouseup = doSomethingWithSelectedText;
     document.onkeyup = doSomethingWithSelectedText;
+*/
+
+	document.getElementById("BreddeObjekt").max = 65;
+	document.getElementById("BreddeObjekt").min = 40;
+	document.getElementById("BreddeObjekt").value = 50;
 
 	colorRedElement.max = 255;
 	colorGreenElement.max = 255;
@@ -69,11 +79,27 @@ function oppstart(){
 	fargeFraFargevelger = "rgb(" + colorRed + "," + colorGreen + "," + colorBlue + ")";
 	document.getElementById("boks").style.backgroundColor = fargeFraFargevelger;
 }
+
+function tekstfeltSomSkalEndres(event) {
+	tekstSomSkalEndres = this
+
+}
+function oppdaterWebsideBredde() {
+	document.getElementById("wrapper").style.width = document.getElementById("BreddeObjekt").value + "%";
+}
 function velgFont() {
     switch (document.getElementById("fontVelger").value) {
-        case 1: fontHolder = "Impact,Charcoal,sans-serif";break;
-        default:
+        case "1": fontHolder = "Times New Roman, Times, serif";break;
+		case "2": fontHolder = "Georgia";break;
+		case "3": fontHolder = "Arial";break;
+		case "4": fontHolder = "Impact,Charcoal,sans-serif";break;
         }
+		tekstSomSkalEndres.style.fontFamily = fontHolder;
+}
+function velgFontStorrelse() {
+	document.getElementById("teksther").style.fontSize = parseInt(document.getElementById("fontSize").value) + "px";
+	document.getElementById("utskrift").innerHTML = document.getElementById("wrapper").toSource()
+
 }
 function oppdaterfarge() {
 	colorRed = colorRedElement.value;
@@ -92,7 +118,7 @@ function giFarge(event) {
 	skalSetteFarge = false;
 	}
 }
-
+/*
 function makeid() {
       var text = "";
       //dette gir 380 204 032 mulige id'er
@@ -101,3 +127,4 @@ function makeid() {
           text += possible.charAt(Math.floor(Math.random() * possible.length));
           return text;
   }
+*/
