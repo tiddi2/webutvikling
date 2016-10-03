@@ -40,10 +40,12 @@ function oppstart(){
     //slutt hentet fra
 
     function doSomethingWithSelectedText() {
+        //legger markert tekst i variabel
         var selectedText = getSelectedText();
+        //henter
         var randomID = makeid()
         if (selectedText) {
-            
+
             var change = tekstfeltElement.innerHTML.replace(selectedText,"<span id=" + randomID + ">" + selectedText + "</span>")
             tekstfeltElement.innerHTML = change;
             document.getElementById(randomID).style.fontFamily = "Impact,Charcoal,sans-serif";
