@@ -1,0 +1,8 @@
+Vi har planlagt struktur og layout på siden sammen.
+Marius og tidemann har jobbet med å lage javascript funksjoner til siden.
+Prasanth har skrevet tekstinnholdet og har jobbet med struktur på "prøv selv" siden.^
+Herman har laget forslag til skisse.
+
+Vi har hatt noen møter og planlagt sammen.
+
+Enkelte har slitt med github så det kan hende noen har opplastet mye mer enn andre.
