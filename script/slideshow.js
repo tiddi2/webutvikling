@@ -17,13 +17,14 @@ window.onload = oppstart;
 		}
 }
 	function byttBilde() {
-		if(bildeTeller > bildeArray.length-1)
+		if(bildeTeller > bildeArray.length-2)
 		{
-			bildeTeller = 0;
+			bildeTeller = -1;
 	}
+	bildeTeller++
 	document.getElementById("bilde").src = bildeArray[bildeTeller];
 
-		bildeTeller++
+
 
 }
 /******* SLIDESHOW SLUTT *********/

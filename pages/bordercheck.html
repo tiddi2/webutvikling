@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		
+		<style>
+			#test {
+				border:2px solid;
+				height:200px;
+				width:200px;
+				margin:30px;
+			}
+		</style>
+		<script>
+			window.onload = oppstart;
+			var test="";
+			function oppstart(){
+				document.getElementById("btnBorder").onclick= settBorder;
+			}
+			
+			function settBorder() {
+				test= "hei";
+				console.log(test);
+			}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		
+		<form>
+			<input type="checkbox" value="">Solid</input>
+			<input type="checkbox" value="">Dotted</input>
+			<!-- <input type="checkbox" value=""></input> -->
+			<button id="btnBorder">Change border!</button>
+			
+		</form>
+		<p id="testutskrift"></p>
+		<div id="test"></div>
+	</body>
+</html>
