@@ -1,4 +1,26 @@
-#bilde {
-    height :600px;
-	width : 600px;
+* {
+    margin: 0;
+    padding: 0;
+}
+.slideshow {
+    height :100%;
+	width : 33%;
+
+}
+#slidshow {
+    width: 950px;
+    height: 300px;
+    border: 1px solid #000000;
+}
+#placeholder {
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    display: inline-block;
+}
+
+#makeMyMistakesDissaper {
+    z-index: 10000;
+    background-color: transparent;
+
 }
