@@ -1,0 +1,41 @@
+    
+#boks1 {
+        height: 50px;
+        width: 700px;
+        border: 5px solid black;
+        padding: 3px;
+        margin: 50px;
+        background-position: auto;
+        float: left;
+        text-align: left;
+        background: #5DFD3E;
+        border-color: #5DFD3E;
+}
+
+    
+#boks2 {
+        height: 404px;
+        width: 193px;
+        border: 5px solid black;
+        padding: 1px;
+        margin: -50px;
+        margin-top: -406px;
+        margin-left:-208px;
+        background-position: auto;
+        float: left;
+        text-align: left;
+        border-color: #5DFD3E;
+}
+
+#boks3 {
+        height: 400px;
+        width: 500px;
+        border: 5px solid black;
+        padding: 3px;
+        margin: -6px;
+        margin-left: 192px;
+        background-position: auto;
+        float: left;
+        text-align: left;
+        border-color: #5DFD3E;
+}
