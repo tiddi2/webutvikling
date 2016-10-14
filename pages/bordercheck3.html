@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		
+		<style>
+			#boks {
+				border:2px dotted;
+				height:200px;
+				width:200px;
+				margin:30px;
+			}
+		</style>
+		<script>
+			window.onload = oppstart;
+			var test="";
+			var checkBoxListe = document.getElementById("checkBoxListe");
+			
+			
+			
+			var shadowWidth = document.getElementById("skyggeBredde");
+			var shadowHeight = document.getElementById("skyggeHoyde");
+			var shadowBlur = document.getElementById("hvorIgjennomsiktig");	
+			
+			
+			function oppstart(){
+				document.getElementById("btnBorder").onclick= settBorder;
+				
+				// for å oppdatere størrelsene
+				document.getElementById("skyggeBredde").onmousemove = hentStorrelse;
+				document.getElementById("skyggeHoyde").onmousemove = hentStorrelse;
+				document.getElementById("hvorIgjennomsiktig").onmousemove = hentStorrelse;
+				
+				// variabler til skygge
+				document.getElementById("skyggeBredde").min=0;
+				document.getElementById("skyggeHoyde").min=0;
+				document.getElementById("hvorIgjennomsiktig").min=0;
+				
+				document.getElementById("skyggeBredde").max= 50;
+				document.getElementById("skyggeHoyde").max =50;
+				document.getElementById("hvorIgjennomsiktig").max=100;
+				
+				document.getElementById("skyggeBredde").value= 0;
+				document.getElementById("skyggeHoyde").value =0;
+				document.getElementById("hvorIgjennomsiktig").value=0;
+				
+			}
+			
+			function hentStorrelse(){
+				shadowWidth = document.getElementById("skyggeBredde");
+				shadowHeight = document.getElementById("skyggeHoyde");
+				shadowBlur = document.getElementById("hvorIgjennomsiktig");	
+				
+				if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
+					document.getElementById("boks").style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value+"px " + "#888888";
+					
+				} 
+				console.log(shadowWidth.value+","+ shadowHeight.value+","+ shadowBlur.value);
+			}
+			
+			function settBorder() {
+				// variabler til border
+			 	var skalHaSolidBorder = document.getElementById("solid");
+				var skalHaDottedBorder = document.getElementById("dotted");
+				var borderWidth = document.getElementById("borderWidth");
+				
+				
+				
+				if (skalHaSolidBorder.checked === true) {
+					document.getElementById("boks").style.border ="solid";
+					document.getElementById("boks").style.borderWidth =  borderWidth.value+"px";
+					skalHaSolidBorder.checked= false;
+					borderWidth.value="";
+				} 
+				
+				if (skalHaDottedBorder.checked === true) {
+					document.getElementById("boks").style.border ="dotted";
+					document.getElementById("boks").style.borderWidth =  borderWidth.value+"px";
+					skalHaDottedBorder.checked=false;
+					borderWidth.value="";
+				}
+				
+			}
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		<form id="checkBoxListe">
+			<input id="solid" type="checkbox" value="solid">Solid</input>
+			<input id="dotted"type="checkbox" value="dotted">Dotted</input>
+			<input id="borderWidth" placeholder="border bredden i px"></input>
+		</form>
+		Border Skygge
+		<br>
+		skyggens bredde
+		<input id="skyggeBredde" type="range" ></input>
+		<br>
+		skyggens høyde
+		<input id="skyggeHoyde" type="range" > </input>
+		<br>
+		skyggens"blur"
+		<input id="hvorIgjennomsiktig" type="range"> </input>
+		<br>
+		<button id="btnBorder">Change border!</button>
+		<div id="boks"></div>
+		
+		
+		
+	</body>
+</html>
