@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Border style</title>
+        <style media="screen">
+            #borderVisualiser {
+                height: 300px;
+                width: 300px;
+                background-color: yellow;
+                float: left;
+            }
+            main {
+                width: 800px;
+                height: 600px;
+                margin: auto;
+                background-color: red;
+                display: inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+
+        </main>
+        <div id="borderVisualiser">
+            <select id="borderStyleSelektor">
+                <option value="0">none</option>
+                <option value="1">hidden</option>
+                <option value="2">dotted</option>
+                <option value="3">dashed</option>
+                <option value="4">solid</option>
+                <option value="5">double</option>
+                <option value="6">groove</option>
+                <option value="7">ridge</option>
+                <option value="8">inset</option>
+                <option value="9">outset</option>
+            </select>
+            <input type="range" id="borderTykkelse">
+        </div>
+
+    </body>
+    <script>
+        var borderStyleSelektorElement = document.getElementById("borderStyleSelektor")
+        var borderVisualiser = document.getElementById("borderVisualiser")
+        var borderTykkelse = document.getElementById("borderTykkelse")
+        borderTykkelse.oninput = oppdaterBorder
+        borderTykkelse.max = 10;
+        borderTykkelse.min = 0;
+        borderTykkelse.value =1;
+            borderStyleSelektorElement.onchange = oppdaterBorder
+        function oppdaterBorder() {
+            borderVisualiser.style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
+            borderVisualiser.style.borderWidth  = borderTykkelse.value + "px"
+            console.log(borderTykkelse.value)
+        }
+    </script>
+</html>
