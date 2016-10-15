@@ -1,3 +1,5 @@
+
+
 //Farge elementer
 var colorRed, colorGreen, colorBlue,colorAlpha;
 var colorRedElement  = document.getElementById("red");
