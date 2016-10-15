@@ -21,27 +21,32 @@
 			var shadowWidth = document.getElementById("skyggeBredde");
 			var shadowHeight = document.getElementById("skyggeHoyde");
 			var shadowBlur = document.getElementById("hvorIgjennomsiktig");	
-			
+			var shadowSpread = document.getElementById("spread");
 			
 			function oppstart(){
 				document.getElementById("btnBorder").onclick= settBorder;
-				
+				// For å resete skyggen
+				document.getElementById("btnSkyggeReset").onclick = resetSkygge;
 				// for å oppdatere størrelsene
 				document.getElementById("skyggeBredde").onmousemove = hentStorrelse;
 				document.getElementById("skyggeHoyde").onmousemove = hentStorrelse;
 				document.getElementById("hvorIgjennomsiktig").onmousemove = hentStorrelse;
+				document.getElementById("spread").onmousemove = hentStorrelse;
 				
 				// variabler til skygge
-				document.getElementById("skyggeBredde").min=0;
-				document.getElementById("skyggeHoyde").min=0;
+				document.getElementById("skyggeBredde").min=-50;
+				document.getElementById("skyggeHoyde").min=-50;
+				document.getElementById("spread").min = 0;
 				document.getElementById("hvorIgjennomsiktig").min=0;
 				
 				document.getElementById("skyggeBredde").max= 50;
 				document.getElementById("skyggeHoyde").max =50;
+				document.getElementById("spread").max = 50;
 				document.getElementById("hvorIgjennomsiktig").max=100;
 				
 				document.getElementById("skyggeBredde").value= 0;
 				document.getElementById("skyggeHoyde").value =0;
+				document.getElementById("spread").value = 0;
 				document.getElementById("hvorIgjennomsiktig").value=0;
 				
 			}
@@ -49,10 +54,11 @@
 			function hentStorrelse(){
 				shadowWidth = document.getElementById("skyggeBredde");
 				shadowHeight = document.getElementById("skyggeHoyde");
-				shadowBlur = document.getElementById("hvorIgjennomsiktig");	
+				shadowBlur = document.getElementById("hvorIgjennomsiktig");
+				shadowSpread = document.getElementById("spread");
 				
 				if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
-					document.getElementById("boks").style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value+"px " + "#888888";
+					document.getElementById("boks").style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value +"px " + shadowSpread.value +"px " + "#888888";
 					
 				} 
 				console.log(shadowWidth.value+","+ shadowHeight.value+","+ shadowBlur.value);
@@ -79,8 +85,16 @@
 					skalHaDottedBorder.checked=false;
 					borderWidth.value="";
 				}
-				
 			}
+			
+			function resetSkygge() {
+				document.getElementById("skyggeBredde").value= 0;
+				document.getElementById("skyggeHoyde").value =0;
+				document.getElementById("spread").value = 0;
+				document.getElementById("hvorIgjennomsiktig").value=0;
+				hentStorrelse();
+			}
+			
 			
 		</script>
 		
@@ -104,7 +118,11 @@
 		skyggens"blur"
 		<input id="hvorIgjennomsiktig" type="range"> </input>
 		<br>
+		skyggens spredning
+		<input id="spread" type="range"></input>
+		<br>
 		<button id="btnBorder">Change border!</button>
+		<button id="btnSkyggeReset">Reset skyggen</button>
 		<div id="boks"></div>
 		
 		
