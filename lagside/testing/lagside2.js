@@ -1,3 +1,4 @@
+
 var shadowWidth = document.getElementById("skyggeBredde");
 var shadowHeight = document.getElementById("skyggeHoyde");
 var shadowBlur = document.getElementById("hvorIgjennomsiktig");	
@@ -60,6 +61,7 @@ settVerdier(colorAlphaElement,0,100,100)
 
 oppdaterfarge()
 oppdaterBorder()
+
 
 function settVerdier(element,min,max,value) {
 	element.max = max;
