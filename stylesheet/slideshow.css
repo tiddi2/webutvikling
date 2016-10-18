@@ -5,12 +5,14 @@
 .slideshow {
     height :100%;
 	width : 33%;
+    z-index: 0
 
 }
 #slidshow {
+    position: relative;
+    margin-left: 100px;
     width: 950px;
     height: 300px;
-    border: 1px solid #000000;
 }
 #placeholder {
     background-color: white;
@@ -19,8 +21,22 @@
     display: inline-block;
 }
 
-#makeMyMistakesDissaper {
+#makeMyMistakesDissaper1 {
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 10000;
-    background-color: transparent;
+    background-color: white;
+    height: 300px;
+    width: 304px;
+}
 
+#makeMyMistakesDissaper2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10000;
+    background-color: white;
+    height: 300px;
+    width: 332px;
 }
