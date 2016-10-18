@@ -2,6 +2,7 @@ var bildeArray = ["http://www.dayztv.com/wp-content/uploads/2014/01/dayz-standal
 var bildeTeller = 1;
 var bildeBytte = 0;
 var bildeURLElement, bildeElementer, btnLeggTilBilde;
+
 window.onload = oppstart;
 	function oppstart(){
 		bildeElement = [document.getElementById("bilde0"),document.getElementById("bilde1")]
