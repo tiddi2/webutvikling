@@ -1,4 +1,5 @@
-
+//Text edit variabel
+var valgtTekstFelst;
 
 //Farge elementer
 var colorRed, colorGreen, colorBlue,colorAlpha;
@@ -24,6 +25,23 @@ colorBlueElement.oninput = oppdaterfarge;
 colorAlphaElement.oninput = oppdaterfarge;
 borderTykkelse.oninput = oppdaterBorder
 borderStyleSelektorElement.onchange = oppdaterBorder
+document.getElementById("fontVelger").onchange = velgFont;
+document.getElementById("fontSize").onchange = velgFontSize;
+document.getElementById("tittelFelt").onclick = sistValgtTekstfelt;
+document.getElementById("artikkel1").onclick = sistValgtTekstfelt;
+document.getElementById("artikkel2").onclick = sistValgtTekstfelt;
+document.getElementById("artikkel3").onclick = sistValgtTekstfelt;
+document.getElementById("section1").onclick = sistValgtTekstfelt;
+document.getElementById("section2").onclick = sistValgtTekstfelt;
+document.getElementById("section3").onclick = sistValgtTekstfelt;
+document.getElementById("sectionOverskrift1").onclick = sistValgtTekstfelt;
+document.getElementById("sectionOverskrift2").onclick = sistValgtTekstfelt;
+document.getElementById("sectionOverskrift3").onclick = sistValgtTekstfelt;
+document.getElementById("artikkelOverskrift1").onclick = sistValgtTekstfelt;
+document.getElementById("artikkelOverskrift2").onclick = sistValgtTekstfelt;
+document.getElementById("artikkelOverskrift3").onclick = sistValgtTekstfelt;
+
+
 
 settVerdier(borderTykkelse,0,10,2)
 settVerdier(colorRedElement,0,255,255)
@@ -64,4 +82,18 @@ function oppdaterfarge() {
 function oppdaterBorder() {
 	borderVisualiser.style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
 	borderVisualiser.style.borderWidth  = borderTykkelse.value + "px"
+}
+
+
+
+//Text edit funksjoner
+function velgFont() {
+	document.getElementById(valgtTekstFelst).style.fontFamily =document.getElementById("fontVelger").value
+}
+function velgFontSize () {
+	document.getElementById(valgtTekstFelst).style.fontSize  = document.getElementById("fontSize").value + "px"
+}
+
+function sistValgtTekstfelt(evt) {
+	valgtTekstFelst = this.id;
 }
