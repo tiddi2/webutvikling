@@ -47,6 +47,7 @@ var shadowHeight = document.getElementById("skyggeHoyde");
 var shadowBlur = document.getElementById("hvorIgjennomsiktig");
 var shadowSpread = document.getElementById("spread");
 var velgBorderElement;
+var borderBolean = false;
 
 
 //brukerstyrte funksjoner
@@ -59,9 +60,6 @@ colorAlphaElement.oninput = oppdaterfarge;
 // Elementer som brukes til textedit
 document.getElementById("fontVelger").onchange = velgFont;
 document.getElementById("fontSize").onchange = velgFontSize;
-document.getElementById("left").onclick = align
-document.getElementById("center").onclick = align
-document.getElementById("right").onclick = align
 document.getElementById("tittelFelt").onclick = sistValgtTekstfelt;
 document.getElementById("artikkel1").onclick = sistValgtTekstfelt;
 document.getElementById("artikkel2").onclick = sistValgtTekstfelt;
@@ -87,6 +85,18 @@ document.getElementById("border4").onclick = onclickFunksjoner;
 document.getElementById("border5").onclick = onclickFunksjoner;
 document.getElementById("lagNav").onclick = onclickFunksjoner;
 document.getElementById("lagTitle").onclick = onclickFunksjoner;
+document.getElementById("lagSide").onclick = onclickFunksjoner;
+document.getElementById("design").onclick = onclickFunksjoner;
+
+
+document.getElementById("borderVisualiser").onclick=settBorder;
+document.getElementById("fargeEndrer").onclick = settFarge;
+
+
+document.getElementById("left").onclick = align
+document.getElementById("center").onclick = align
+document.getElementById("right").onclick = align
+
 
 
 
@@ -104,27 +114,26 @@ settVerdier(colorAlphaElement,0,100,100)
 oppdaterfarge()
 oppdaterBorder()
 
-
-function align(evt) {
-    document.getElementById(valgtTekstFelst).style.textAlign = this.id
-}
-
 // samlings funksjon for onclick funksjonene
 function onclickFunksjoner(){
-	fargeId = this.id;
-	fargeElement = document.getElementById(fargeId);
-	velgBorderElement = this.id;
+    if(skalSetteFarge=== true || borderBolean === true) {
+        fargeId = this.id;
+        fargeElement = document.getElementById(fargeId);
+        velgBorderElement = this.id;
 
 
-	DefinerFargeBoks();
-	giBorder();
+        DefinerFargeBoks();
+        giBorder();
+        skalSetteFarge = false;
+        borderBolean = false;
+    }
 }
 
 
 function settVerdier(element,min,max,value) {
-	element.max = max;
-	element.min = min;
-	element.value = value;
+    element.max = max;
+    element.min = min;
+    element.value = value;
 }
 
 function settFarge() {
@@ -145,7 +154,7 @@ function oppdaterfarge() {
     colorRed = colorRedElement.value;
     colorGreen = colorGreenElement.value;
     colorBlue = colorBlueElement.value;
-	colorAlpha = colorAlphaElement.value/100;
+    colorAlpha = colorAlphaElement.value/100;
     fargeFraFargevelger = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + colorAlpha +")"
 
     colorVisualiser.style.backgroundColor = fargeFraFargevelger;
@@ -157,7 +166,7 @@ function oppdaterfarge2() {
     colorRed = colorRedElement.value;
     colorGreen = colorGreenElement.value;
     colorBlue = colorBlueElement.value;
-	colorAlpha = colorAlphaElement.value/100;
+    colorAlpha = colorAlphaElement.value/100;
     fargeFraFargevelger = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + colorAlpha +")"
 
     fargeElement.style.backgroundColor = fargeFraFargevelger;
@@ -165,9 +174,10 @@ function oppdaterfarge2() {
 
 // lagrer ID'n til det elementet som klikkes på, slik at vi kan bruke det senere når vi skal sette fargen.
 function DefinerFargeBoks(){
-	oppdaterfarge();
-	oppdaterfarge2();
-
+    if (skalSetteFarge === true){
+        oppdaterfarge();
+        oppdaterfarge2();
+    }
 }
 
 
@@ -175,25 +185,29 @@ function DefinerFargeBoks(){
 
 // her oppdateres borderen i eksempelboksen
 function oppdaterBorder() {
-	borderVisualiser.style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
-	borderVisualiser.style.borderWidth  = borderTykkelse.value + "px"
+    borderVisualiser.style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
+    borderVisualiser.style.borderWidth  = borderTykkelse.value + "px"
 }
 
 // her oppdateres borderen i et utvalgt element på nettsiden
 function oppdaterBorder2() {
-	document.getElementById(velgBorderElement).style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
-	document.getElementById(velgBorderElement).style.borderWidth  = borderTykkelse.value + "px"
+    document.getElementById(velgBorderElement).style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
+    document.getElementById(velgBorderElement).style.borderWidth  = borderTykkelse.value + "px"
 }
 
+function settBorder() {
+    borderBolean = true;
+
+}
 
 function giBorder(evt){
+    if (borderBolean === true){
 
-
-	oppdaterBorder();
-	oppdaterBorder2()
-	hentStorrelse();
-	hentStorrelse2();
-
+    oppdaterBorder();
+    oppdaterBorder2()
+    hentStorrelse();
+    hentStorrelse2();
+    }
 
 }
 
@@ -208,10 +222,10 @@ shadowHeight = document.getElementById("skyggeHoyde");
 shadowBlur = document.getElementById("hvorIgjennomsiktig");
 shadowSpread = document.getElementById("spread");
 
-	if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
-	document.getElementById("borderVisualiser").style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value +"px " + shadowSpread.value +"px " + "#888888";
+    if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
+    document.getElementById("borderVisualiser").style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value +"px " + shadowSpread.value +"px " + "#888888";
 
-	}
+    }
 console.log(shadowWidth.value+","+ shadowHeight.value+","+ shadowBlur.value);
 }
 
@@ -222,10 +236,10 @@ shadowHeight = document.getElementById("skyggeHoyde");
 shadowBlur = document.getElementById("hvorIgjennomsiktig");
 shadowSpread = document.getElementById("spread");
 
-	if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
-	document.getElementById(velgBorderElement).style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value +"px " + shadowSpread.value +"px " + "#888888";
+    if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
+    document.getElementById(velgBorderElement).style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value +"px " + shadowSpread.value +"px " + "#888888";
 
-	}
+    }
 console.log(shadowWidth.value+","+ shadowHeight.value+","+ shadowBlur.value);
 }
 
@@ -243,12 +257,17 @@ hentStorrelse2();
 
 //Text edit funksjoner
 function velgFont() {
-	document.getElementById(valgtTekstFelst).style.fontFamily =document.getElementById("fontVelger").value
+    document.getElementById(valgtTekstFelst).style.fontFamily =document.getElementById("fontVelger").value
 }
 function velgFontSize () {
-	document.getElementById(valgtTekstFelst).style.fontSize  = document.getElementById("fontSize").value + "px"
+    document.getElementById(valgtTekstFelst).style.fontSize  = document.getElementById("fontSize").value + "px"
 }
 
 function sistValgtTekstfelt(evt) {
-	valgtTekstFelst = this.id;
+    valgtTekstFelst = this.id;
+}
+
+function align(evt) {
+
+    document.getElementById(valgtTekstFelst).style.textAlign = this.id
 }
