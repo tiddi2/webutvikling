@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Lag en nettside</title>
+		<script src="https://use.fontawesome.com/37d15fb83d.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<meta charset="utf-8" />
 	</head>
@@ -47,29 +48,29 @@
 		                <option>inset</option>
 		                <option>outset</option>
 		            </select>
-					
+
 					<input type="range" id="borderTykkelse">
 					<p>
 						skyggens bredde
 						<input id="skyggeBredde" type="range" ></input>
 					</p>
-					
+
 					<p>
 						skyggens høyde
 						<input id="skyggeHoyde" type="range" > </input>
 					</p>
-					
+
 					<p>
 						skyggens"blur"
 						<input id="hvorIgjennomsiktig" type="range"> </input>
 					</p>
-					
+
 					<p>
 						skyggens spredning
 						<input id="spread" type="range"></input>
 					</p>
-					
-					
+
+
 					<button id="btnSkyggeReset">Reset skyggen</button>
 					<div id="borderVisualiser"></div>
 				</div>
@@ -95,8 +96,10 @@
 				        <option value= "42">42</option>
 				        <option value= "52">52</option>
 				        <option value= "72">72</option>
-
 				    </select>
+					<i class="fa fa-align-left" aria-hidden="true" id="left"></i>
+				    <i class="fa fa-align-center" aria-hidden="true" id="center"></i>
+				    <i class="fa fa-align-right" aria-hidden="true" id="right"></i>
 				</div>
 			</div>
 			<div>

@@ -21,18 +21,18 @@ document.getElementById("skyggeBredde").onmousemove = hentStorrelse;
 document.getElementById("skyggeHoyde").onmousemove = hentStorrelse;
 document.getElementById("hvorIgjennomsiktig").onmousemove = hentStorrelse;
 document.getElementById("spread").onmousemove = hentStorrelse;
-				
+
 // elementer til skygge
 document.getElementById("skyggeBredde").min=-50;
 document.getElementById("skyggeHoyde").min=-50;
 document.getElementById("spread").min = 0;
 document.getElementById("hvorIgjennomsiktig").min=0;
-				
+
 document.getElementById("skyggeBredde").max= 50;
 document.getElementById("skyggeHoyde").max =50;
 document.getElementById("spread").max = 50;
 document.getElementById("hvorIgjennomsiktig").max=100;
-				
+
 document.getElementById("skyggeBredde").value= 0;
 document.getElementById("skyggeHoyde").value =0;
 document.getElementById("spread").value = 0;
@@ -44,7 +44,7 @@ var borderVisualiser = document.getElementById("borderVisualiser");
 var borderTykkelse = document.getElementById("borderTykkelse");
 var shadowWidth = document.getElementById("skyggeBredde");
 var shadowHeight = document.getElementById("skyggeHoyde");
-var shadowBlur = document.getElementById("hvorIgjennomsiktig");	
+var shadowBlur = document.getElementById("hvorIgjennomsiktig");
 var shadowSpread = document.getElementById("spread");
 var velgBorderElement;
 
@@ -59,6 +59,9 @@ colorAlphaElement.oninput = oppdaterfarge;
 // Elementer som brukes til textedit
 document.getElementById("fontVelger").onchange = velgFont;
 document.getElementById("fontSize").onchange = velgFontSize;
+document.getElementById("left").onclick = align
+document.getElementById("center").onclick = align
+document.getElementById("right").onclick = align
 document.getElementById("tittelFelt").onclick = sistValgtTekstfelt;
 document.getElementById("artikkel1").onclick = sistValgtTekstfelt;
 document.getElementById("artikkel2").onclick = sistValgtTekstfelt;
@@ -101,13 +104,18 @@ settVerdier(colorAlphaElement,0,100,100)
 oppdaterfarge()
 oppdaterBorder()
 
+
+function align(evt) {
+    document.getElementById(valgtTekstFelst).style.textAlign = this.id
+}
+
 // samlings funksjon for onclick funksjonene
 function onclickFunksjoner(){
 	fargeId = this.id;
 	fargeElement = document.getElementById(fargeId);
 	velgBorderElement = this.id;
-	
-	
+
+
 	DefinerFargeBoks();
 	giBorder();
 }
@@ -133,7 +141,7 @@ function giFarge(event) {
 
 // Her oppdateres fargen i eksempel boksen
 function oppdaterfarge() {
-	
+
     colorRed = colorRedElement.value;
     colorGreen = colorGreenElement.value;
     colorBlue = colorBlueElement.value;
@@ -145,7 +153,7 @@ function oppdaterfarge() {
 
 // Her oppdateres fargen på det elementet du valgte i nettsiden.
 function oppdaterfarge2() {
-	
+
     colorRed = colorRedElement.value;
     colorGreen = colorGreenElement.value;
     colorBlue = colorBlueElement.value;
@@ -159,7 +167,7 @@ function oppdaterfarge2() {
 function DefinerFargeBoks(){
 	oppdaterfarge();
 	oppdaterfarge2();
-	
+
 }
 
 
@@ -179,13 +187,13 @@ function oppdaterBorder2() {
 
 
 function giBorder(evt){
-	
-	
+
+
 	oppdaterBorder();
 	oppdaterBorder2()
 	hentStorrelse();
 	hentStorrelse2();
-	
+
 
 }
 
@@ -199,11 +207,11 @@ shadowWidth = document.getElementById("skyggeBredde");
 shadowHeight = document.getElementById("skyggeHoyde");
 shadowBlur = document.getElementById("hvorIgjennomsiktig");
 shadowSpread = document.getElementById("spread");
-				
+
 	if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
 	document.getElementById("borderVisualiser").style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value +"px " + shadowSpread.value +"px " + "#888888";
-					
-	} 
+
+	}
 console.log(shadowWidth.value+","+ shadowHeight.value+","+ shadowBlur.value);
 }
 
@@ -213,11 +221,11 @@ shadowWidth = document.getElementById("skyggeBredde");
 shadowHeight = document.getElementById("skyggeHoyde");
 shadowBlur = document.getElementById("hvorIgjennomsiktig");
 shadowSpread = document.getElementById("spread");
-				
+
 	if (shadowWidth.value!=="" && shadowHeight.value!=="" && shadowBlur.value!=="") {
 	document.getElementById(velgBorderElement).style.boxShadow= shadowWidth.value+"px " + shadowHeight.value+"px " + shadowBlur.value +"px " + shadowSpread.value +"px " + "#888888";
-					
-	} 
+
+	}
 console.log(shadowWidth.value+","+ shadowHeight.value+","+ shadowBlur.value);
 }
 
