@@ -3,8 +3,15 @@
     <head>
         <meta charset="utf-8">
         <title>Text Edit</title>
+        <script src="https://use.fontawesome.com/37d15fb83d.js"></script>
         <script src ="../script/textedit.js"></script>
         <link rel="stylesheet" href="../stylesheet/textedit.css" media="screen" title="no title">
+        <style media="screen">
+            #left, #center, #right
+            {
+                font-size: 2em;
+            }
+        </style>
     </head>
     <body>
 <aside>
@@ -28,10 +35,10 @@
         <option value= "52">52</option>
         <option value= "72">72</option>
     </select>
-    <button type="button" id="left">Left align</button>
-    <button type="button" id="center">Center align</button>
-    <button type="button" id="right">Right align</button>
-
+    <br>
+    <i class="fa fa-align-left" aria-hidden="true" id="left"></i>
+    <i class="fa fa-align-center" aria-hidden="true" id="center"></i>
+    <i class="fa fa-align-right" aria-hidden="true" id="right"></i>
 </aside>
 
 <div id="wrapper">
