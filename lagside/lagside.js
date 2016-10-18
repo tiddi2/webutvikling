@@ -81,6 +81,11 @@ document.getElementById("border1").onclick = onclickFunksjoner;
 document.getElementById("border2").onclick = onclickFunksjoner;
 document.getElementById("border3").onclick = onclickFunksjoner;
 document.getElementById("border4").onclick = onclickFunksjoner;
+/*
+document.getElementById("border5").onclick = onclickFunksjoner;
+document.getElementById("lagNav").onclick = onclickFunksjoner;
+*/
+
 
 
 settVerdier(borderTykkelse,0,10,2)
