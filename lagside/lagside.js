@@ -10,6 +10,8 @@ var colorAlphaElement = document.getElementById("alpha");
 
 var colorVisualiser = document.getElementById("fargeEndrer")
 var fargeFraFargevelger;
+var fargeElement;
+var fargeId;
 var skalSetteFarge = false;
 
 // For å resete skyggen
@@ -44,7 +46,6 @@ var shadowWidth = document.getElementById("skyggeBredde");
 var shadowHeight = document.getElementById("skyggeHoyde");
 var shadowBlur = document.getElementById("hvorIgjennomsiktig");	
 var shadowSpread = document.getElementById("spread");
-var skalSetteBorder = false;
 var velgBorderElement;
 
 
@@ -55,6 +56,7 @@ colorGreenElement.oninput = oppdaterfarge;
 colorBlueElement.oninput = oppdaterfarge;
 colorAlphaElement.oninput = oppdaterfarge;
 
+// Elementer som brukes til textedit
 document.getElementById("fontVelger").onchange = velgFont;
 document.getElementById("fontSize").onchange = velgFontSize;
 document.getElementById("tittelFelt").onclick = sistValgtTekstfelt;
@@ -71,14 +73,14 @@ document.getElementById("artikkelOverskrift1").onclick = sistValgtTekstfelt;
 document.getElementById("artikkelOverskrift2").onclick = sistValgtTekstfelt;
 document.getElementById("artikkelOverskrift3").onclick = sistValgtTekstfelt;
 
+// Elementer som brukes til endring av border, skygge og farge
 borderTykkelse.oninput = oppdaterBorder
 borderStyleSelektorElement.onchange = oppdaterBorder
 borderStyleSelektorElement.onchange = oppdaterBorder2
-document.getElementById("border1").onclick = giBorder;
-document.getElementById("border2").onclick = giBorder;
-document.getElementById("border3").onclick = giBorder;
-document.getElementById("border4").onclick = giBorder;
-
+document.getElementById("border1").onclick = onclickFunksjoner;
+document.getElementById("border2").onclick = onclickFunksjoner;
+document.getElementById("border3").onclick = onclickFunksjoner;
+document.getElementById("border4").onclick = onclickFunksjoner;
 
 
 settVerdier(borderTykkelse,0,10,2)
@@ -87,8 +89,23 @@ settVerdier(colorGreenElement,0,255,0)
 settVerdier(colorBlueElement,0,255,255)
 settVerdier(colorAlphaElement,0,100,100)
 
+
+
+
 oppdaterfarge()
 oppdaterBorder()
+
+// samlings funksjon for onclick funksjonene
+function onclickFunksjoner(){
+	fargeId = this.id;
+	fargeElement = document.getElementById(fargeId);
+	velgBorderElement = this.id;
+	
+	
+	DefinerFargeBoks();
+	giBorder();
+}
+
 
 function settVerdier(element,min,max,value) {
 	element.max = max;
@@ -106,8 +123,11 @@ function giFarge(event) {
         skalSetteFarge = false;
     }
 }
+// Fikk ikke parametere til å fungere her, beklager for kopiering av samme funskjon.
 
+// Her oppdateres fargen i eksempel boksen
 function oppdaterfarge() {
+	
     colorRed = colorRedElement.value;
     colorGreen = colorGreenElement.value;
     colorBlue = colorBlueElement.value;
@@ -117,12 +137,35 @@ function oppdaterfarge() {
     colorVisualiser.style.backgroundColor = fargeFraFargevelger;
 }
 
+// Her oppdateres fargen på det elementet du valgte i nettsiden.
+function oppdaterfarge2() {
+	
+    colorRed = colorRedElement.value;
+    colorGreen = colorGreenElement.value;
+    colorBlue = colorBlueElement.value;
+	colorAlpha = colorAlphaElement.value/100;
+    fargeFraFargevelger = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + colorAlpha +")"
+
+    fargeElement.style.backgroundColor = fargeFraFargevelger;
+}
+
+// lagrer ID'n til det elementet som klikkes på, slik at vi kan bruke det senere når vi skal sette fargen.
+function DefinerFargeBoks(){
+	oppdaterfarge();
+	oppdaterfarge2();
+	
+}
+
+
 // Borderfunksjoner
+
+// her oppdateres borderen i eksempelboksen
 function oppdaterBorder() {
 	borderVisualiser.style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
 	borderVisualiser.style.borderWidth  = borderTykkelse.value + "px"
 }
 
+// her oppdateres borderen i et utvalgt element på nettsiden
 function oppdaterBorder2() {
 	document.getElementById(velgBorderElement).style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
 	document.getElementById(velgBorderElement).style.borderWidth  = borderTykkelse.value + "px"
@@ -131,17 +174,20 @@ function oppdaterBorder2() {
 
 function giBorder(evt){
 	
-	velgBorderElement = this.id;
+	
+	oppdaterBorder();
 	oppdaterBorder2()
 	hentStorrelse();
 	hentStorrelse2();
 	
 
 }
-// border funksjoner slutt
+
 
 // Endring av skyggen
+// Samme problem her som tidligere, måtte dessverre kopiere kode.
 
+// her oppdateres skyggen i eksempelboksen
 function hentStorrelse(){
 shadowWidth = document.getElementById("skyggeBredde");
 shadowHeight = document.getElementById("skyggeHoyde");
@@ -155,6 +201,7 @@ shadowSpread = document.getElementById("spread");
 console.log(shadowWidth.value+","+ shadowHeight.value+","+ shadowBlur.value);
 }
 
+// her oppdateres borderen i det utvalgte elementet i nettleseren.
 function hentStorrelse2(){
 shadowWidth = document.getElementById("skyggeBredde");
 shadowHeight = document.getElementById("skyggeHoyde");

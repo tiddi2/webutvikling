@@ -6,7 +6,7 @@ var shadowSpread = document.getElementById("spread");
 
 // For å resete skyggen
 document.getElementById("btnSkyggeReset").onclick = resetSkygge;
-// for å oppdatere størrelsene
+// for å oppdatere størrelsene på skyggen
 document.getElementById("skyggeBredde").onmousemove = hentStorrelse;
 document.getElementById("skyggeHoyde").onmousemove = hentStorrelse;
 document.getElementById("hvorIgjennomsiktig").onmousemove = hentStorrelse;
