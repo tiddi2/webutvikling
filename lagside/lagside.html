@@ -33,7 +33,7 @@
 				</div>
 			</div>
 			<div>
-				<h3>Velg Ramme</h3>
+								<h3>Velg Ramme</h3>
 				<div>
 					<select id="borderStyleSelektor">
 		                <option>solid</option>
@@ -47,7 +47,30 @@
 		                <option>inset</option>
 		                <option>outset</option>
 		            </select>
+					
 					<input type="range" id="borderTykkelse">
+					<p>
+						skyggens bredde
+						<input id="skyggeBredde" type="range" ></input>
+					</p>
+					
+					<p>
+						skyggens høyde
+						<input id="skyggeHoyde" type="range" > </input>
+					</p>
+					
+					<p>
+						skyggens"blur"
+						<input id="hvorIgjennomsiktig" type="range"> </input>
+					</p>
+					
+					<p>
+						skyggens spredning
+						<input id="spread" type="range"></input>
+					</p>
+					
+					
+					<button id="btnSkyggeReset">Reset skyggen</button>
 					<div id="borderVisualiser"></div>
 				</div>
 			</div>
@@ -104,20 +127,20 @@
 				<div id="lagNav">Lenke | Lenke | Lenke | Lenke</div>
 				<div id="lagMain">
 					<aside>
-						<section>
+						<section id="border1">
 							<h3 id="sectionOverskrift1" contenteditable="true">Overskrift</h3>
 							<p id="section1" contenteditable="true">Aliquam risus tortor, dapibus bibendum lacinia vitae, blandit vel sem. Phasellus pulvinar massa mi, euismod tristique lorem pellentesque et. Nulla interdum ipsum lorem, sed imperdiet lectus bibendum a.</p>
 						</section>
-						<section>
+						<section id="border2">
 							<h3  id="sectionOverskrift2" contenteditable="true">Overskrift</h3>
 							<p  id="section2" contenteditable="true">Aliquam risus tortor, dapibus bibendum lacinia vitae, blandit vel sem. Phasellus pulvinar massa mi, euismod tristique lorem pellentesque et. Nulla interdum ipsum lorem, sed imperdiet lectus bibendum a.</p>
 						</section>
-						<section>
+						<section id="border3">
 							<h3  id="sectionOverskrift3" contenteditable="true">Overskrift</h3>
 							<p  id="section3" contenteditable="true">Aliquam risus tortor, dapibus bibendum lacinia vitae, blandit vel sem. Phasellus pulvinar massa mi, euismod tristique lorem pellentesque et. Nulla interdum ipsum lorem, sed imperdiet lectus bibendum a.</p>
 						</section>
 					</aside>
-					<article>
+					<article id="border4">
 						<h3 id="artikkelOverskrift1" contenteditable="true">Overskrift</h3>
 						<p  id="artikkel1" contenteditable="true">Cras malesuada lorem at congue tristique.
 						Sed consequat, enim vitae porta lacinia, felis libero posuere risus,
