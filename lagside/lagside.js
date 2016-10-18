@@ -338,7 +338,7 @@ function flyttBilde() {
 		var bevegID = setInterval(beveg,10)
 	}
 	function beveg() {
-		tykkelse -= 1
+		tykkelse -= 0.5
 		document.getElementById('placeholder').setAttribute("style","width:" + tykkelse + "%");
 		if(tykkelse === 0)
 		{
