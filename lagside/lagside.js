@@ -192,7 +192,8 @@ function oppdaterfarge2() {
     fargeFraFargevelger = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + colorAlpha +")"
     fargeElement.style.backgroundColor = fargeFraFargevelger;
     if(fargeElement.id == "lagSide") {
-        fargeElement.style.backgroundColor = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + 1 +")"
+        fargeFraFargevelger = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + 1 +")"
+        fargeElement.style.backgroundColor  = fargeFraFargevelger
         document.getElementById("makeMyMistakesDissaper1").style.backgroundColor = fargeFraFargevelger;
         document.getElementById("makeMyMistakesDissaper2").style.backgroundColor = fargeFraFargevelger;
     }
