@@ -45,20 +45,10 @@ document.getElementById("hvorIgjennomsiktig").onmousemove = hentStorrelse;
 document.getElementById("spread").onmousemove = hentStorrelse;
 
 // elementer til skygge
-document.getElementById("skyggeBredde").min=-50;
-document.getElementById("skyggeHoyde").min=-50;
-document.getElementById("spread").min = 0;
-document.getElementById("hvorIgjennomsiktig").min=0;
-
-document.getElementById("skyggeBredde").max= 50;
-document.getElementById("skyggeHoyde").max =50;
-document.getElementById("spread").max = 50;
-document.getElementById("hvorIgjennomsiktig").max=100;
-
-document.getElementById("skyggeBredde").value= 0;
-document.getElementById("skyggeHoyde").value =0;
-document.getElementById("spread").value = 0;
-document.getElementById("hvorIgjennomsiktig").value=0;
+settVerdier(document.getElementById("skyggeBredde"),-50,50,0)
+settVerdier(document.getElementById("skyggeHoyde"),-50,50,0)
+settVerdier(document.getElementById("spread"),0,50,0)
+settVerdier(document.getElementById("hvorIgjennomsiktig"),0,100,0)
 
 //Border elemeneter
 var borderStyleSelektorElement = document.getElementById("borderStyleSelektor");
@@ -98,7 +88,6 @@ document.getElementById("artikkelOverskrift3").onclick = sistValgtTekstfelt;
 
 // Elementer som brukes til endring av border, skygge og farge
 borderTykkelse.oninput = oppdaterBorder
-borderStyleSelektorElement.onchange = oppdaterBorder
 borderStyleSelektorElement.onchange = oppdaterBorder2
 document.getElementById("border1").onclick = onclickFunksjoner;
 document.getElementById("border2").onclick = onclickFunksjoner;
@@ -213,14 +202,17 @@ function DefinerFargeBoks(){
 
 // her oppdateres borderen i eksempelboksen
 function oppdaterBorder() {
-    borderVisualiser.style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
-    borderVisualiser.style.borderWidth  = borderTykkelse.value + "px"
+    document.getElementById("borderVisualiser").style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
+    document.getElementById("borderVisualiser").style.borderWidth  = borderTykkelse.value + "px"
 }
 
 // her oppdateres borderen i et utvalgt element på nettsiden
 function oppdaterBorder2() {
-    document.getElementById(velgBorderElement).style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
-    document.getElementById(velgBorderElement).style.borderWidth  = borderTykkelse.value + "px"
+    if(velgBorderElement) {
+        document.getElementById(velgBorderElement).style.border = borderStyleSelektorElement.options[borderStyleSelektorElement.selectedIndex].text
+        document.getElementById(velgBorderElement).style.borderWidth  = borderTykkelse.value + "px"
+    }
+    oppdaterBorder()
 }
 
 function settBorder() {

@@ -62,9 +62,12 @@ body{
 	height: 50px;
 	width: 50px;
 	background-color: #F3F3F3;
+	margin-left: 50px;
+}
+#fargeEndrer {
+	margin-left: 50px;
 
 }
-
 
 /* Slideshow stuff */
 .slideshow {
