@@ -72,39 +72,21 @@ body{
 /* Slideshow stuff */
 .slideshow {
     height :100%;
-	width: 32.5%;
+	width: 100%;
     z-index: 5;
 	padding: 0;
 	margin: 0;
+	position: absolute;
 }
 #slidshow {
     position: relative;
-    width: 640px;
-    height: 200px;
+	display: block;
+	max-width: 30%;
+	max-height: 60%;
+	min-width: 200px;
+	min-height:200px;
+	width: auto;
+  	height: auto;
 	margin-top: 20px;
-}
-#placeholder {
-    background-color: transparent;
-	width: 33%;
-    height: 100%;
-    display: inline-block;
-}
-
-#makeMyMistakesDissaper1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10000;
-	background-color: white;
-	height: 100%;
-	width: 34%;
-}
-#makeMyMistakesDissaper2 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 10000;
-	background-color: white;
-	height: 100%;
-    width: 33.3%;
+	overflow: hidden;
 }

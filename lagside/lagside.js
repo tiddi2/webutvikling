@@ -295,7 +295,6 @@ function align(evt) {
 
 
 //funksjoner for slideshow
-
 function leggTilBilde() {
 	if(bildeURLElement.value !== "" && checkURL(bildeURLElement.value) || substringIString(bildeURLElement.value,"https://www.google")) {
 		bildeArray.push(bildeURLElement.value);
@@ -325,27 +324,25 @@ function byttBilde() {
 }
 
 function flyttBilde() {
-	var tykkelse = 33;
-	if(tykkelse > 0) {
+	var plassering = 0;
+	if(plassering > -100) {
 		var bevegID = setInterval(beveg,10)
 	}
 	function beveg() {
-		tykkelse -= 0.5
-		document.getElementById('placeholder').setAttribute("style","width:" + tykkelse + "%");
-		if(tykkelse === 0)
+		plassering -= 1
+        if(bildeBytte %2 === 0) {
+            bildeElement[1].style.left = plassering + "%"
+            bildeElement[0].style.left = 100 +plassering + "%"
+        }
+        else {
+            bildeElement[0].style.left = plassering + "%"
+            bildeElement[1].style.left = 100 +plassering + "%"
+
+        }
+		if(plassering === -100)
 		{
 			clearInterval(bevegID)
 			bevegID = 0;
-			document.getElementById('placeholder').setAttribute("style","width:" + 33 + "%");
-			if(bildeBytte %2 === 0) {
-				bildeElement[0].parentNode.insertBefore(bildeElement[0], bildeElement[1]);
-				bildeElement[1].style.opacity = 0;
-			}
-			else {
-				bildeElement[1].parentNode.insertBefore(bildeElement[1], bildeElement[0]);
-				bildeElement[0].style.opacity = 0;
-
-			}
 		}
 	}
 }

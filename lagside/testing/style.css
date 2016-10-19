@@ -41,10 +41,12 @@ body{
 #lagMain article{
 	width:70%;
 }
+/*
 #lagMain img{
 	width:50%;
 	height:20%;
 }
+*/
 #lagMain aside{
 	width:25%;
 	float:right;
@@ -60,5 +62,31 @@ body{
 	height: 50px;
 	width: 50px;
 	background-color: #F3F3F3;
+	margin-left: 50px;
+}
+#fargeEndrer {
+	margin-left: 50px;
 
+}
+
+/* Slideshow stuff */
+.slideshow {
+    height :100%;
+	width: 100%;
+    z-index: 5;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+}
+#slidshow {
+    position: relative;
+	display: block;
+	max-width: 30%;
+	max-height: 60%;
+	min-width: 200px;
+	min-height:200px;
+	width: auto;
+  	height: auto;
+	margin-top: 20px;
+	overflow: hidden;
 }
