@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <generator>RSS Builder by B!Soft</generator>
+    <title>A-Design</title>
+    <link>ask.hiof.no/~hermanjd/webutv/ADesign</link>
+    <description>Free building website</description>
+    <language>en-us</language>
+    <copyright>© Copyright all rights reserved ADesign</copyright>
+    <item>
+      <title>Ny RSS Post</title>
+      <pubDate>Wed, 19 Oct 2016 20:03:12 +0200</pubDate>
+      <link>ask.hiof.no/~hermanjd/webutv/ADesign</link>
+      <author>Marius ADesign</author>
+      <category>Nettside</category>
+      <enclosure url="http://www.ask.hiof.no/~hermanjd/webutv/ADesign/video" length="" type="" />
+      <description><![CDATA[]]></description>
+    </item>
+  </channel>
+</rss>

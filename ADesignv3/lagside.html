@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+	<title>Lag en nettside</title>
+	<meta charset="utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style_lag.css">
+</head>
+
+<body>
+	<div id="toolbar">
+		<a href="index.html">Tilbake til forsiden</a>
+		<img id="iconADW" src="img/smallADW.svg">
+		<h1>Verktøy:</h1>
+		<div>
+			<button class="NOE" data-toggle="collapse" data-target="#farger">Velg farge</button>
+			<div id="farger" class="collapse">
+				<p>
+					Rød:
+					<input id="red" type="range">
+				</p>
+				<p>
+					Grønn:
+					<input id="green" type="range">
+				</p>
+
+				<p>
+					Blå:
+					<input id="blue" type="range">
+				</p>
+				<p>
+					Gjennomsiktighet:
+					<input id="alpha" type="range">
+				</p>
+
+				<div id="fargeEndrer" class="boks"></div>
+			</div>
+		</div>
+		<div>
+			<button class="NOE" data-toggle="collapse" data-target="#ramme">Velg Ramme</button>
+
+			<div id="ramme" class="collapse">
+				<select id="borderStyleSelektor">
+		                <option>solid</option>
+						<option>dotted</option>
+		                <option>dashed</option>
+		                <option>none</option>
+						<option>hidden</option>
+		                <option>double</option>
+		                <option>groove</option>
+		                <option>ridge</option>
+		                <option>inset</option>
+		                <option>outset</option>
+		            </select>
+
+				<input type="range" id="borderTykkelse">
+				<p>
+					skyggens bredde
+					<input id="skyggeBredde" type="range">
+				</p>
+
+				<p>
+					skyggens høyde
+					<input id="skyggeHoyde" type="range">
+				</p>
+
+				<p>
+					skyggens"blur"
+					<input id="hvorIgjennomsiktig" type="range">
+				</p>
+
+				<p>
+					skyggens spredning
+					<input id="spread" type="range">
+				</p>
+
+
+				<button id="btnSkyggeReset">Reset skyggen</button>
+				<div id="borderVisualiser"></div>
+			</div>
+		</div>
+		<div>
+			<button class="NOE" data-toggle="collapse" data-target="#endreTekst">Endre Tekst</button>
+			<div id="endreTekst" class="collapse">
+				<select id="fontVelger">
+				        <option value= "Times New Roman">Times New Roman</option>
+				        <option value= "Georgia">Georgia</option>
+				        <option value= "Arial">Arial</option>
+				        <option value= "Arial Black">Arial Black</option>
+				    </select>
+
+				<select id="fontSize">
+				        <option value= "12">12</option>
+				        <option value= "14">14</option>
+				        <option value= "16">16</option>
+				        <option value= "18">18</option>
+				        <option value= "20">20</option>
+				        <option value= "24">24</option>
+				        <option value= "36">36</option>
+				        <option value= "42">42</option>
+				        <option value= "52">52</option>
+				        <option value= "72">72</option>
+				    </select>
+				<br>
+				<img src="venstre.png" alt="align Left" id="left" />
+				<img src="midten.png" alt="align center" id="center" />
+				<img src="hoyre.png" alt="align right" id="right" />
+
+			</div>
+		</div>
+		<div>
+			<button class="NOE" data-toggle="collapse" data-target="#endreBilde">Legg til bilder i slideshowet</button>
+			<div id="endreBilde" class="collapse">
+				<input type="text" id="bildeInput" placeholder="Skriv inn bilde URL">
+				<button type="button" id="btnLeggTilBilde">Legg til url</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="design">
+		<div id="lagSide">
+			<div id="lagTitle">
+				<h2 id="tittelFelt" contenteditable="true">Tittel</h2>
+			</div>
+			<div id="lagNav">Lenke | Lenke | Lenke | Lenke</div>
+			<div id="lagMain">
+				<aside>
+					<section id="border1">
+						<h3 id="sectionOverskrift1" contenteditable="true">Overskrift</h3>
+						<p id="section1" contenteditable="true">Aliquam risus tortor, dapibus bibendum lacinia vitae, blandit vel sem. Phasellus pulvinar massa mi, euismod tristique lorem pellentesque et. Nulla interdum ipsum lorem, sed imperdiet lectus bibendum a.</p>
+					</section>
+					<section id="border2">
+						<h3 id="sectionOverskrift2" contenteditable="true">Overskrift</h3>
+						<p id="section2" contenteditable="true">Aliquam risus tortor, dapibus bibendum lacinia vitae, blandit vel sem. Phasellus pulvinar massa mi, euismod tristique lorem pellentesque et. Nulla interdum ipsum lorem, sed imperdiet lectus bibendum a.</p>
+					</section>
+					<section id="border3">
+						<h3 id="sectionOverskrift3" contenteditable="true">Overskrift</h3>
+						<p id="section3" contenteditable="true">Aliquam risus tortor, dapibus bibendum lacinia vitae, blandit vel sem. Phasellus pulvinar massa mi, euismod tristique lorem pellentesque et. Nulla interdum ipsum lorem, sed imperdiet lectus bibendum a.</p>
+					</section>
+				</aside>
+				<article id="border4">
+					<h3 id="artikkelOverskrift1" contenteditable="true">Overskrift</h3>
+					<p id="artikkel1" contenteditable="true">Cras malesuada lorem at congue tristique. Sed consequat, enim vitae porta lacinia, felis libero posuere risus, ac cursus augue turpis ac tortor. Sed eu ipsum tristique, fringilla mi rutrum, fringilla mauris. Praesent hendrerit eget ante ut ultrices.
+						Etiam imperdiet euismod dui, ac iaculis ipsum. Etiam malesuada risus vulputate mauris tempus.</p>
+					<h3 id="artikkelOverskrift2" contenteditable="true">Overskrift</h3>
+					<p id="artikkel2" contenteditable="true">Phasellus pulvinar massa mi, euismod tristique lorem pellentesque et. Nulla interdum ipsum lorem, sed imperdiet lectus bibendum a. Sed lorem felis, convallis eu mauris vitae, faucibus tempus nulla. Praesent leo justo, dictum nec purus vitae, interdum
+						dapibus massa. In metus augue, vehicula eu dignissim sed, vulputate convallis nisl. Duis imperdiet, turpis ut facilisis rhoncus, risus dolor pulvinar nunc, ut interdum justo libero quis orci.</p>
+				</article>
+				<div id="slidshow">
+					<img src="#" id="bilde0" alt="slideshow" class="slideshow" />
+					<img src="#" id="bilde1" alt="slideshow" class="slideshow" />
+				</div>
+				<article id="border5">
+					<h3 id="artikkelOverskrift3" contenteditable="true">Overskrift</h3>
+					<p id="artikkel3" contenteditable="true">Cras malesuada lorem at congue tristique. Sed consequat, enim vitae porta lacinia, felis libero posuere risus, ac cursus augue turpis ac tortor. Sed eu ipsum tristique, fringilla mi rutrum, fringilla mauris. Praesent hendrerit eget ante ut ultrices.
+						Etiam imperdiet euismod dui, ac iaculis ipsum. Etiam malesuada risus vulputate mauris tempus.</p>
+				</article>
+
+			</div>
+		</div>
+	</div>
+	<script src="lagside.js"></script>
+</body>
+
+</html>

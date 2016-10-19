@@ -1,0 +1,228 @@
+html{
+	font-size:150%;
+}
+body{
+	background-color:#f3f3f3;
+	margin:0px;
+	font-family: 'Open Sans', sans-serif;
+	height:100vh;
+	
+}
+nav{
+	width:100%;
+	background-color:#f3f3f3;
+	height:50px;
+	padding:0px;
+	position:fixed;
+}
+nav button{
+	margin:0;
+	border:0;
+	padding:0;
+	background-color: Transparent;
+	display:none;
+}
+nav ul{
+	display: inline;
+	list-style-type: none;
+	margin:0px;
+	padding:0px;
+	padding-left:20px;
+
+}
+nav ul li{
+	display: inline;
+	
+}
+nav ul li a{
+	display:inline-block;
+	padding:6px;
+	text-decoration:none;
+	color:#444444;
+	border-bottom:solid 4px #2ecc71;
+}
+nav ul li a:hover{
+	background-color:#2ecc71;
+	color:white;
+}
+nav img{
+		 float: left;
+}
+#buffer{
+	height:50px;
+	width:100%;
+}
+#banner{
+	width: 100%;
+	background-image: url("img/forest.jpg"); 
+	background-color:#2ecc71;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	color:white;
+	text-align:center;
+	display: flex;
+    align-items: center;
+	padding-top:5%;
+	padding-bottom:5%;
+}
+#bannercont{
+		margin:auto;
+}
+#bannercont h2{
+	margin-top:0px;
+}
+#bannercont button{
+	margin:0;
+	border: solid white 2px;
+	padding:1%;
+	background-color: Transparent;
+	color: white;
+	font-size:0.7em;
+	border-radius: 5px;
+}
+#bannercont button:hover{
+	background-color:white;
+	color: #2ecc71;
+}
+main{
+	padding:10px;
+	width:55%;
+	margin:auto;
+}
+main a{
+	width:210px;
+	display:block;
+	margin:auto;
+	padding:6px;
+	text-decoration:none;
+	color:#444444;
+	border-bottom:solid 4px #2ecc71;
+	
+}
+main a:hover{
+	background-color:#2ecc71;
+	color:white;
+}
+#introduction{
+	width:50%;
+	display: block;
+	margin:auto;
+}
+.introductionpicture{
+	width:33%;
+	display: block;
+	margin:auto;
+}
+main #flexiboxi{
+	margin-top:30px;
+	width:100%;
+	justify-content: space-between;
+	display: flex;
+}
+main #flexiboxi .info{
+	width: 30%;
+	background-color:#27ae60;
+	color:white;
+}
+main #flexiboxi .infotext{
+	width:100%;
+	background-color:#2ecc71;
+}
+main #flexiboxi .infotext img{
+	display:block;
+	margin:auto;
+	padding-top:15px;
+}
+main #flexiboxi .info h4{
+	font-size:0.9em;
+	margin:0px;
+}
+main #flexiboxi .info p{
+	margin:0px;
+	font-size:0.7em;
+	padding-bottom:25px;
+}
+main #flexiboxi .infocont{
+	margin:10px;
+}
+main h2{
+	color:#2ecc71;
+	font-size:1.2em;
+}
+main article p{
+	width:80%;
+	margin:auto;
+	font-size: 0.7em;
+}
+
+footer{
+	font-size:0.7em;
+	width:100%;
+	background-color:#2ecc71;
+	color: white;
+	clear: both;
+	height:210px;
+}
+footer div{
+	margin:auto;
+	width:50%;
+}
+footer #copyright{
+	text-align:center;
+	
+}
+
+footer a {
+	float: right;
+	margin-top:10px;
+	
+}
+/*meida queries*/
+@media screen and (max-width: 1200px) {
+    main {
+        width:75%;
+    }
+}
+@media screen and (max-width: 900px) {
+	main {
+        width:90%;
+    }
+	footer div{
+	margin:auto;
+	width:90%;
+	}
+}
+@media screen and (max-width: 720px) {
+	main {
+        width:95%;
+    }
+	#onclickmeny{
+		display:none;
+		background-color:#f3f3f3;
+	}
+	nav button{
+		display:inline;
+		float:left;
+	}
+
+	nav ul li a{
+		display:inline-block;
+		color:#444444;
+		border-bottom:solid 4px #2ecc71;
+	}
+}
+@media screen and (max-width: 600px) {
+	main #flexiboxi{
+		flex-direction: column;
+	}
+	main #flexiboxi .info{
+	width: 90%;
+	display:block;
+	margin:auto;
+	margin-bottom:20px;
+	}
+	main #flexiboxi .infotext img{
+		padding-top:0px;
+	}
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" href="img/adesign.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Design</title>
+	<script>
+	function showmenu(){
+		var menu = document.getElementById('onclickmeny');
+		if(menu.style.display !== "none"){
+			menu.style.display = "none";
+		}else{
+			menu.style.display = "block";
+		}
+	}
+	</script>
+</head>
+
+<body>
+    <nav>
+		<button onclick="showmenu()"><img src="img/menu.png"></button>
+		<a href="index.html"><img src="img/adesign_small.png"></a>
+		<div id="onclickmeny">
+			<ul>
+				<li>
+					<a href="about.html">Om oss</a>
+				</li>
+				
+				<li>
+					<a href="introduction.html">Lag en nettside!</a>
+				</li>
+			</ul>
+		</div>
+    </nav>
+	<div id="buffer">.</div>
+    <div id="banner">
+        <div id="bannercont">
+			<img src="img/adesign.png">
+            <h2>Simpelt. Enkelt. Design.</h2>
+            <p>Alt du trenger til å markedsføre i en digital verden</p>
+            <button id="lesmer" onclick="window.location.href='#container'">Les mer</button>
+        </div>
+    </div>
+    <main id="container">
+        <div id="flexiboxi">
+            <div class="info">
+                <div class="infotext"><img src="img/webutvikling.png" alt="Penn og linjal">
+                </div>
+                <div class="infocont">
+                    <h4>Webdesign</h4>
+                    <p>Vi tilyr responsivt webdesign slik at du kan nå lettere ut til ditt publikum på alle forskjellige plattformer.</p>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infotext"><img src="img/sosialemedier.png" alt="Høytaler">
+                </div>
+                <div class="infocont">
+                    <h4>Sosiale medier</h4>
+                    <p>Adesign vil hjelpe deg med å promotere din sak ved hjelp av effiktive kampanjer på sosiale medier.</p>
+                </div>
+            </div>
+            <div class="info">
+                <div class="infotext"><img src="img/logodesign.png">
+                </div>
+                <div class="infocont">
+                    <h4>Logodesign</h4>
+                    <p>Gi din bedrift en merkverdig logo. Vi hjelper deg med å produsere profisjonelle logoer som vil gjøre deg synlig i markedet.</p>
+                </div>
+            </div>
+        </div>
+        <article>
+            <h2>Vår vison</h2>
+            <p>Vi jobber hardt mot å være Ledene i Norge innenfor nettsteder og interaktivt design. Dette skal vi nå ved å lage innovatie nettsider, med moderne design. Igjennom vårt fantastike team gir vi ordet kvalitet en helt ny betydning.</p>
+
+        </article>
+        <article>
+            <h2>Våre verdier</h2>
+            <p>Vi har har et stort fokus på kundeservice og brukervenlighet, kunden er i senturm. Alle som er kunder hoss oss får et nettsted som er gjennomtenkt, har et tiltrekkende design, og har funksjonalitet av klasse. For å opprettholde vår 100% fornøyd garanti, har vi valgt å gi alle våre kunder gratis kundesupport i 5 år!</p>
+        </article>
+        <article>
+            <h2>Bestill Konsultering</h2>
+            <p>Dersom du vurderer å bli kunde hos oss, så bare å ta kontakt. Alle får gratis konsulteringstimer hvor man kan fortelle hva man vil ha, så lager vi en skisse og lager et kjapt utkast. Det her helt gratis!</p>
+        </article>
+    </main>
+    <footer>
+        <div>
+			<a href="http://ask.hiof.no/~mariusol/webutvikling/web3test/feed.xml"><img width="20" height="20" src="rssbutton.png"/></a>
+            <h3>Kontakt oss</h3>
+            <p>Tlf: +4799418740</p>
+            <p>Adresse: BRA veien 6B</p>
+			<p>1783 Halden</p>
+			
+            <p id="copyright">&copy; Copyright all rights reserved</p>
+
+		
+        </div>
+		
+    </footer>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+	<link rel="icon" href="img/adesign.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Design</title>
+	<script>
+	function showmenu(){
+		var menu = document.getElementById('onclickmeny');
+		if(menu.style.display !== "none"){
+			menu.style.display = "none";
+		}else{
+			menu.style.display = "block";
+		}
+	}
+	</script>
+</head>
+
+<body>
+    <nav>
+		<button onclick="showmenu()"><img src="img/menu.png"></button>
+		<a href="index.html"><img src="img/adesign_small.png"></a>
+		<div id="onclickmeny">
+			<ul>
+				<li>
+					<a href="about.html">Om oss</a>
+				</li>
+				
+				<li>
+					<a href="introduction.html">Lag en nettside!</a>
+				</li>
+			</ul>
+		</div>
+    </nav>
+	<div id="buffer">.</div>
+    <main id="container">
+        <article>
+            <h2>Team ADesign</h2>
+            <p>Vårt team består av fire studenter som møtte hverandre igjennom vår utdanning på Høyskolen i Østfold. Vi studerer alle IT, og har tilegnet oss kunnskap om hvordan å lage moderne responsive nettsteder. </p>
+
+        </article>
+        <article>
+            <h2>Herman Johan Dragland</h2>
+            <p>Hei! Jeg heter Herman og er hovedansvarlig for det grafisk design hos ADesign. Igjennom mine tre års utdanning i Medier og Kommunikasjon har jeg tillegnet meg ferdigheter innenfor grafisk design og markedsføring av produkter og tjenester. Jeg studerer nå Informatikk ved Høyskolen i Østfold. Studiet omhandler programering av datamaskiner, mobiltelefoner, samt utvikling av større IT-systemer.</p>
+        </article>
+        <article>
+            <h2>Marius</h2>
+            <p>Jeg er en 21 årig student ved Høgskolen i Østfold, jeg studerer infromatikk I Halden. Jeg jobber fortiden som  webutviklier for A-Design. I  mine tidligere oppdrag har jeg jobbet både front,- og backend i resposiv webdesign, og blant annet systemutvikling. Jeg spessialiserer meg på javascript, men har også gode PHP,- og actionscript ferdigheter fra  mine  tidligere oppdrag hos bedrifter hvor avanserte  driftsystemer var i fokus.</p>
+        </article>
+		<article>
+            <h2>Tidemann</h2>
+            <p>Jeg heter Tidemann Norli er 19år og studerer Informatikk ved Høgskolen i Østfold avdeling Halden.
+Jeg en bakgrunn innen Machine learning og har jobbet for Google i 4 år. Nå har jeg gått over til et mer ambisiøst prosjekt. Hos A-design står jeg ansvarlig for kunstig intelligens og logikken bak programmene
+
+Tlf: 55 89 20 41 Epost: anderstn@adesign.com</p>
+        </article>
+		<article>
+            <h2>Prasanth</h2>
+            <p>Jeg heter Prasanth Pusparaja, er 23år gammel. Jeg studerer Digitale medier ved høgskolen i Østfold, avdeling Halden.
+Jeg har tidligere jobbet som designer for Apple, og nå jobber jeg som ansvarlig for webdesign for A-Design.
+
+Kontaktinfo: 
+E-post: prasanthp@adesign.no
+Tlf: 777 92 666</p>
+        </article>
+    </main>
+    <footer>
+        <div>
+			<a href="http://ask.hiof.no/~mariusol/webutvikling/web3test/feed.xml"><img width="20" height="20" src="rssbutton.png"/></a>
+            <h3>Kontakt oss</h3>
+            <p>Tlf: +4799418740</p>
+            <p>Adresse: BRA veien 6B</p>
+			<p>1783 Halden</p>
+            <p id="copyright">&copy; Copyright all rights reserved</p>
+        </div>
+    </footer>
+</body>
+
+</html>
