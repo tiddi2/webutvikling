@@ -130,7 +130,7 @@ function onclickFunksjoner(){
         fargeId = this.id;
         fargeElement = document.getElementById(fargeId);
         velgBorderElement = this.id;
-
+        console.log(this.id)
 
         DefinerFargeBoks();
         giBorder();
@@ -180,12 +180,6 @@ function oppdaterfarge2() {
     colorAlpha = colorAlphaElement.value/100;
     fargeFraFargevelger = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + colorAlpha +")"
     fargeElement.style.backgroundColor = fargeFraFargevelger;
-    if(fargeElement.id == "lagSide") {
-        fargeFraFargevelger = "rgba(" + colorRed + "," + colorGreen + "," + colorBlue + "," + 1 +")"
-        fargeElement.style.backgroundColor  = fargeFraFargevelger
-        document.getElementById("makeMyMistakesDissaper1").style.backgroundColor = fargeFraFargevelger;
-        document.getElementById("makeMyMistakesDissaper2").style.backgroundColor = fargeFraFargevelger;
-    }
 
 }
 
@@ -348,6 +342,7 @@ function flyttBilde() {
 }
 
 function checkURL(url) {
+    url.toLowercase()
     return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
 }
 

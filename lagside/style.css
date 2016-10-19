@@ -68,6 +68,9 @@ body{
 	margin-left: 50px;
 
 }
+.collapse {
+	padding: 10px 80px 10px 80px;
+}
 
 /* Slideshow stuff */
 .slideshow {
