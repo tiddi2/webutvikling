@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+
+<channel>
+  <title>A-Design</title>
+  <link>http://ask.hiof.no/~hermanjd/webutv/ADesign/</link>
+  <description>Free building website</description>
+  <item>
+    <title>RSS feed</title>
+    <link>http://ask.hiof.no/~hermanjd/webutv/ADesign/</link>
+    <description>New RSS on A-Design</description>
+  </item>
+  <item>
+    <title>RSS feed</title>
+    <link>http://ask.hiof.no/~hermanjd/webutv/ADesign/</link>
+    <description>Make your own website</description>
+  </item>
+  <category>Build website</category>
+  <copyright> © Copyright all rights reserved</copyright>
+</channel>
+
+</rss>
